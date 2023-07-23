@@ -1,6 +1,6 @@
 - name: playbook1
   hosts: all
-  become: yes
+  become: no
   vars_prompt:
     - name: ad_user
       prompt: "Input AD username for domain join"
