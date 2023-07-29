@@ -1,0 +1,17 @@
+- name: playbook1
+  hosts: all
+  become: no
+  gather_facts: no
+  vars_prompt:
+    - name: ad_user
+      prompt: "Input AD username for domain join"
+      private: no
+
+    - name: ad_user_password
+      prompt: "Input password for the AD account"
+
+  tasks:
+    - name: show vars
+      debug:
+        msg: "user: {{ad_user}} pwd: {{ad_user_password}}"
+
